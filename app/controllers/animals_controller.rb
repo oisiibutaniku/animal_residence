@@ -1,6 +1,6 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]  
   def index
     @animals = Animal.includes(:user).order("created_at DESC")
   end
@@ -28,6 +28,12 @@ class AnimalsController < ApplicationController
   end
   
   def show
+    @comment = Comment.new
+    @comments = @animal.comments.includes(:user)
+  end
+
+  def search
+    @animals = Animal.search(params[:keyword])
   end
   
 
