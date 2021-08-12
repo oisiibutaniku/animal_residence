@@ -1,18 +1,5 @@
 <div class="contents row">
   <% @animals.each do |animal| %>
-    <div class="content_post" style="background-image: url(<%= animal.image %>);">
-          <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-          <li>
-            <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
-                      </li>
-        </ul>
-      </div>
-      <p><%= animal.text %></p>
-      <span class="name">
-        <%= animal.name %>
-      </span>
-    </div>
+   <%= render partial: "animal", locals: { animal: animal } %>
   <% end %>
 </div>

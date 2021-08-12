@@ -1,0 +1,24 @@
+    <div class="content_post" style="background-image: url(<%= animal.image %>);">
+          <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+                  <li>
+            <%= link_to '詳細', animal_path(animal.id), method: :get %>
+          </li>
+          <% if user_signed_in? && current_user.id == animal.user_id %>
+          <li>
+            <%= link_to '編集', edit_animal_path(animal.id), method: :get %>
+         </li>
+          <li>
+            <%= link_to '削除', animal_path(animal.id), method: :delete %>
+         </li>
+         <% end %>
+        </ul>
+      </div>
+      <p><%= animal.text %></p>
+      <span class="name">
+        <a href="">
+          <span>投稿者</span><%= animal.user.nickname %>
+        </a>
+      </span>
+    </div>
