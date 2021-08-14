@@ -4,4 +4,9 @@ class UsersController < ApplicationController
     @nickname = current_user.nickname
     @animals = current_user.animals
   end
+
+  def edit
+    user = User.find(params[:id])
+  end
+
 end
