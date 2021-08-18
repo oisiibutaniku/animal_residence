@@ -1,9 +1,18 @@
-<div class="content_post">
-      <span class="name">
-        <a href="/users/<%= animal.user.id %>">
-        <%= animal.user.nickname %>
-        </a>
-      </span>
-<%= link_to image_tag(animal.image, class: 'animalpic'),animal_path(animal.id) %>
+<div class='animal-content'>
+  <div class='user-img-content'>
+    <% if animal.user.image.present? %>
+    <%= image_tag animal.user.image, class: "item-img" %>
+    <% else %>
+    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <% end %>
+  </div>
+  <div class="content_post">
+    <span class="name">
+    <a href="/users/<%= animal.user.id %>">
+    <%= animal.user.nickname %>
+    </a>
+    </span>
+    <%= link_to image_tag(animal.image, class: 'animalpic'),animal_path(animal.id) %>
       <p><%= animal.text %></p>
-    </div>
+  </div>
+</div>
