@@ -1,8 +1,11 @@
- <div id="splash">
+   <div id="splash">
     <div id="splash_logo">
       <img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/img/loading.svg" alt="" class="fadeUp">
     </div>
   </div>
+
+
+
 <%= form_with(url: search_animals_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
@@ -12,20 +15,9 @@
    <%= render partial: "animal", locals: { animal: animal } %>
   <% end %>
 </div>
-<div class="my-account">
-<div class='user-img'>
-<% if current_user.image.present? %>
-    <%= image_tag current_user.image, class: "item-img" %>
-    <% else %>
-    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
-    <% end %>
-    </div>
-    <div class='user-name'>
-    <a href="/users/<%= current_user.id %>">
-    <%= current_user.nickname %>
-    </a>
-    </div>
-  </div>
+ <%= render partial: "sideber" %>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/4-1-4.js"></script>
 
 
-  

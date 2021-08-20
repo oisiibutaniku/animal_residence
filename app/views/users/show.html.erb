@@ -1,9 +1,25 @@
 <div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <div class="pro_edit">
-  <%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
+  <div class='pro'>
+    <div class='userpage-img'>
+    <% if current_user.image.present? %>
+    <%= image_tag @user.image, class: "item-img"%>
+    <% else %>
+    <%= image_tag @user.image, class: "item-img"%>
+    <% end %>
+    </div>
+    <div class='userpage-text'>
+        <div class='userpage-name'>
+        </a><%= @user.nickname %>
+        </div class='userpage-profile'>
+        <%= @user.profile %>
+        <div class="pro_edit ">
+        <%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
+    </div>
   </div>
+</div>
+  <p><%= @user.nickname %>さんの投稿一覧</p>
   <% @animals.each do |animal| %>
     <%= render partial: "animals/animal", locals: { animal: animal } %> 
      <% end %>
 </div>
+ <%= render partial: "animals/sideber" %>
