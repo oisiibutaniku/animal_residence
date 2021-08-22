@@ -1,12 +1,21 @@
 <div class="contents row">
+<div class='animal-content'>
+  <div class='user-img-content'>
+    <% if @animal.user.image.present? %>
+    <%= image_tag @animal.user.image, class: "item-img" %>
+    <% else %>
+    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <% end %>
+  </div>
   <div class="content_post">
   <span class="name">
       <a href="/users/<%= @animal.user.id %>">
       <%= @animal.user.nickname %>
       </a>
     </span>
-  <%= image_tag @animal.image, class: 'animalpic' %>
     <p><%= @animal.text %></p>
+  <%= image_tag @animal.image, class: 'animalpic' %>
+  </div>
   </div>
    <div class="container">
     <% if user_signed_in? %>
@@ -28,3 +37,4 @@
     </div>
   </div>
 </div>
+<%= render partial: "sideber" %>

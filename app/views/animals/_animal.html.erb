@@ -11,8 +11,12 @@
     <a href="/users/<%= animal.user.id %>">
     <%= animal.user.nickname %>
     </a>
+    <p><%= animal.text %></p>
+    <p><% animal.tags.each do |tag| %>
+      #<%=tag.name%>
+      <%end%>
+    </p>
     </span>
     <%= link_to image_tag(animal.image, class: 'animalpic'),animal_path(animal.id) %>
-      <p><%= animal.text %></p>
   </div>
 </div>

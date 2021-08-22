@@ -1,5 +1,5 @@
 @charset "UTF-8";
-field
+p
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
  * HTML5 display definitions
@@ -663,6 +663,12 @@ body {
 a {
   text-decoration: none;
   color: #666;
+  font-size: 25px;
+}
+p {
+  font-size: 20px;
+  color: #666;
+  padding: 20px 40px 20px 40px;
 }
 
 a:hover {
@@ -707,8 +713,9 @@ form input[type="submit"] {
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
   font-size: 14px;
-  border: 2px solid orange;
-  color: orange;
+  border: 2px solid white;
+  color: white;
+  background-color: orange;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -718,7 +725,7 @@ header.header div.header__bar.row div.grid-6 a.post {
 .btn:hover,
 header.header div.header__bar.row div.grid-6 a.post:hover {
   border-color: orange;
-  color: orange;
+  color:orangered;
 }
 
 .title {
@@ -766,32 +773,25 @@ header.header div.header__bar.row div.grid-6 {
 
 header.header div.header__bar.row div.grid-6 a.post {
   width: 120px;
-  display: inline-left;
   margin-left: 10px;
 }
 
 header.header .user_nav {
   position: relative;
   height: 100px;
-  right: 0;
+  width: 800px;
+  bottom:80px;
+  left: 250px;
 }
 
 header.header .user_nav span {
   top: 5px;
   display: block;
-  float: left;
-  margin-left: 30px;
   width: 150px;
   height: 50px;
   font-size: 1em;
   cursor: pointer;
   position: relative;
-}
-
-header.header .user_nav span:after {
-  content: '▼';
-  font-size: .7em;
-  margin-left: -4px;
 }
 
 header.header .user_nav span:hover ul {
@@ -866,7 +866,7 @@ div.contents.row div.content_post {
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   display: inline-block;
-	min-hight: 100%;
+	min-height: 100%;
   background-color: white;
 }
 
@@ -892,18 +892,6 @@ div.contents.row div.content_post .more ul{
   padding: 5px;
   background-color: orange;
   color: #fff;
-}
-
-div.contents.row div.content_post p {
-  position: absolute;
-  left: 30px;
-  right: 100px;
-  bottom: 30px;
-  margin: 0;
-  font-size: 20px;
-  z-index: 2;
-  font-weight: bold;
-  text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
 }
 
 div.contents.row div.content_post span.name {
@@ -1109,22 +1097,23 @@ footer p {
     width: 100%;
     height: 100%;
     z-index: 999;
-    background:#333;
-    text-align:center;
-    color:#fff;
   }
   
   /* Loading画像中央配置　*/
   #splash_logo {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    width: 100%;
+    height: 100%;
     transform: translate(-50%, -50%);
+    background: orange;
   }
   
   /* Loading アイコンの大きさ設定　*/
   #splash_logo img {
-    width:500px;
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    height: 300px;
   }
   
   /* fadeUpをするアイコンの動き */
@@ -1175,7 +1164,7 @@ footer p {
     /*ナビゲーション天地中央揃え*/
     position: absolute;
     z-index: 999;
-    top:60%;
+   padding-top:400px;
     left:50%;
     font-size: 20px;
     transform: translate(-50%,-50%);

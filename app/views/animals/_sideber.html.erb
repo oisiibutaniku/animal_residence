@@ -1,4 +1,4 @@
-  <div class="openbtn"><span></span>
+  <div class="openbtn" id="opendtn"><span></span>
                        <span></span>
                        <span></span>
   </div>
@@ -19,7 +19,7 @@
 <ul>
 <li><%= link_to "投稿する", new_animal_path %></li> 
 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
-<li><a href="#">Service</a></li> 
+<li><%= link_to "検索する", search_animals_path %></li> 
 <li><a href="#">Contact</a></li> 
 </ul>
 </div>

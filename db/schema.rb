@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_12_061434) do
+ActiveRecord::Schema.define(version: 2021_08_22_081405) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2021_08_12_061434) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "animal_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "animal_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["animal_id"], name: "index_animal_tag_relations_on_animal_id"
+    t.index ["tag_id"], name: "index_animal_tag_relations_on_tag_id"
+  end
+
   create_table "animals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "text", null: false
@@ -51,6 +60,12 @@ ActiveRecord::Schema.define(version: 2021_08_12_061434) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", null: false
@@ -66,6 +81,8 @@ ActiveRecord::Schema.define(version: 2021_08_12_061434) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "animal_tag_relations", "animals"
+  add_foreign_key "animal_tag_relations", "tags"
   add_foreign_key "animals", "users"
   add_foreign_key "comments", "animals"
   add_foreign_key "comments", "users"

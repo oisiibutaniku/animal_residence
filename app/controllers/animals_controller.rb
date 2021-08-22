@@ -7,12 +7,19 @@ class AnimalsController < ApplicationController
   end
 
   def new
-    @animal = Animal.new
+    @animal_tag = AnimalsTag.new
   end
 
   def create
-    Animal.create(animal_params)
+    @animal_tag = AnimalsTag.new(animal_params)
+    if @animal_tag.valid?
+      @animal_tag.save
+       redirect_to root_path
+    else
+      render :new
+    end
   end
+  
 
   def destroy
     animal = Animal.find(params[:id])
@@ -40,7 +47,7 @@ class AnimalsController < ApplicationController
 
   private
   def animal_params
-    params.require(:animal).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:animals_tag).permit(:image, :text, :name).merge(user_id: current_user.id)
   end
   
   def set_animal

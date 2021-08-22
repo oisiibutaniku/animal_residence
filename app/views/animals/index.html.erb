@@ -1,15 +1,8 @@
    <div id="splash">
     <div id="splash_logo">
-      <img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/img/loading.svg" alt="" class="fadeUp">
+    <%= image_tag 'logo.png', class:"fadeUp" %> 
     </div>
   </div>
-
-
-
-<%= form_with(url: search_animals_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
 <div class="contents row">
   <% @animals.each do |animal| %>
    <%= render partial: "animal", locals: { animal: animal } %>

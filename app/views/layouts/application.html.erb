@@ -19,15 +19,10 @@
         <h1 class="grid-6"><a href="/">AnimalResidence</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </span>
-                      <%= link_to "投稿する", new_animal_path, class: "post" %>
+          <%= form_with(url: search_animals_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+          <% end %>
           </div>
         <% else %>
           <div class="grid-6">
