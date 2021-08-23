@@ -41,8 +41,12 @@ class AnimalsController < ApplicationController
   end
 
   def search
-    @animals = Animal.search(params[:keyword])
+    if (params[:keyword])[0] == '#'
+      @animals = Tag.search(params[:keyword]).order('created_at DESC')
+    else
+      @animals = Animal.search(params[:keyword]).order('created_at DESC')
   end
+end
   
 
   private
