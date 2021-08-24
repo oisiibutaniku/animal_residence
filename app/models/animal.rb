@@ -7,7 +7,7 @@ class Animal < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Animal.where('text LIKE(?)', "%#{search}%")
+      Animal.where('tweet LIKE(?)', "%#{search}%")
     else
       Animal.all
     end

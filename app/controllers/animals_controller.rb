@@ -51,7 +51,7 @@ end
 
   private
   def animal_params
-    params.require(:animals_tag).permit(:image, :text, :name).merge(user_id: current_user.id)
+    params.require(:animals_tag).permit(:image, :tweet, :name).merge(user_id: current_user.id)
   end
   
   def set_animal

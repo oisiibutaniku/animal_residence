@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_081405) do
 
   create_table "animals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "text", null: false
+    t.text "tweet", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_animals_on_user_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_081405) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "animal_id", null: false
-    t.text "text", null: false
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["animal_id"], name: "index_comments_on_animal_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_081405) do
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

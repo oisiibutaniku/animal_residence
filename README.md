@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[アプリケーション名]
+ANIMAL_RESIDENCE(アニマル レジデンス)
 
-Things you may want to cover:
+[アプリケーション概要]
+動物画像投稿系SNSアプリケーションです
 
-* Ruby version
+[URL]
 
-* System dependencies
+[テスト用アカウント]
 
-* Configuration
+[利用方法]
 
-* Database creation
+[目指した課題解決]
+動物
+[洗い出した要件]
+*ユーザー管理機能
 
-* Database initialization
+*ツイート投稿機能
 
-* How to run the test suite
+*ユーザープロフィール更新機能
 
-* Services (job queues, cache servers, search engines, etc.)
+*コメント機能
 
-* Deployment instructions
+*検索機能
 
-* ...
+*タグ検索機能
+
+[実装予定の機能]
+*いいね機能の実装
+
+*投稿画像プレビュー機能
+
+*フォロー機能の実装
+
+[データベース設計]
+
+[ローカルでの動作方法]

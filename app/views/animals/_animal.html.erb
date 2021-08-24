@@ -11,7 +11,7 @@
     <a href="/users/<%= animal.user.id %>">
     <%= animal.user.nickname %>
     </a>
-    <p><%= animal.text %></p>
+    <p><%= animal.tweet %></p>
     <p><% animal.tags.each do |tag| %>
     <%=link_to tag.name, search_animals_path(keyword: tag.name) %>
       <%end%>

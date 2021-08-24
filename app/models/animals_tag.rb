@@ -1,13 +1,13 @@
 class AnimalsTag
 
   include ActiveModel::Model
-  attr_accessor :image,:text, :name,:user_id
+  attr_accessor :image,:tweet, :name,:user_id
 
   with_options presence: true do
   end
 
   def save
-    animal = Animal.create(text: text,image: image,user_id: user_id)
+    animal = Animal.create(tweet: tweet,image: image,user_id: user_id)
     tag = Tag.where(name: name).first_or_initialize
     tag.save
 
