@@ -4,16 +4,16 @@
     <% if current_user.image.present? %>
     <%= image_tag @user.image, class: "item-img"%>
     <% else %>
-<%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
     <% end %>
     </div>
     <div class='userpage-text'>
         <div class='userpage-name'>
-        </a><%= @user.nickname %>
-        </div class='userpage-profile'>
+        <a><%= @user.nickname %></a>
+        <div class='userpage-profile'>
         <%= @user.profile %>
-        <div class="pro_edit ">
-        <%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
+        </div>
+        <%= link_to 'プロフィールを編集', edit_user_path(@user.id),class:"pro_edit" %>
     </div>
   </div>
 </div>
@@ -22,4 +22,3 @@
     <%= render partial: "animals/animal", locals: { animal: animal } %> 
      <% end %>
 </div>
- <%= render partial: "animals/sideber" %>

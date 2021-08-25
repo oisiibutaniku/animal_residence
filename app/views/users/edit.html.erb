@@ -1,7 +1,8 @@
-<div class="contents row">
+<div class="contents row log">
   <div class="container">
     <h2>プロフィールを編集</h2>
     <%= form_with(model:@user, local: true) do |f| %>
+    <%= render 'animals/error_messages', model: f.object %>
 
             プロフィール画像
         <span class="indispensable"></span>
@@ -9,8 +10,12 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"user-image" %>
+        <%= f.file_field :image, id:"select-image" %>
     </div>
+            <div class= "preview">
+        <div id="image-list">
+        </div>
+        </div>
             <div class="field">
         <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>

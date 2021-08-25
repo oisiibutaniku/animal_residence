@@ -1,5 +1,6 @@
 @charset "UTF-8";
-p
+
+font-size
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
  * HTML5 display definitions
@@ -655,7 +656,7 @@ body {
   line-height: 1.57;
   letter-spacing: 0.15em;
   font-size: 16px;
-  color: glay;
+  color: gray;
   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
@@ -664,15 +665,16 @@ a {
   text-decoration: none;
   color: #666;
   font-size: 25px;
+  font-weight: bold
 }
 p {
   font-size: 20px;
-  color: #666;
+  color: gray;
   padding: 20px 40px 20px 40px;
 }
 
 a:hover {
-  color: orange;
+  color: white;
 }
 
 .bold {
@@ -945,7 +947,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: white;
+  background-color: yellow;
 }
 
 .container {
@@ -1020,10 +1022,12 @@ footer p {
 }
 .user-img-content {
   position: relative;
-  hight: 100px;
+  height: 100px;
   width: 100px;
   top: 20px;
   right: 10px;
+  margin: 10px;
+	border-radius: 20px;
 }
 .animal-content {
   display: flex;
@@ -1041,17 +1045,28 @@ footer p {
 
 /*indexのユーザー情報*/
 .user-img {
-  position: relative;
-  height: 250px;
-  width: 250px;
-  top: 20px;
-  left: 20%;
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  top: 60px;
+  left: 10%;
+  display: block;
+
 }
 .user-name {
+  position: absolute;
+  font-size: 30px;
+  top: 380px;
+  left: 15%;
+  text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+  display: block;
+}
+.user-list {
   position: relative;
-  font-size: 40px;
-  top: 20px;
-  left: 20%;
+  display: block;
+  top: 400px;
 }
 
 /*showのユーザー情報*/
@@ -1060,12 +1075,13 @@ footer p {
   justify-content: space-between;
   background-color: ivory;
   padding: 30px;
-  margin:;
 }
 .userpage-img {
   top:300px;
   height: 300px;
   width: 300px;
+  margin: 10px;
+	border-radius: 20px;
 }
   .userpage-text {
     height: 300px;
@@ -1082,8 +1098,14 @@ footer p {
   }
   .pro_edit {
     position: relative;
+    width: 260px;
+    height:50px;
     top: 160px;
-    left: 200px; 
+    left: 150px; 
+    text-align: center;
+    color:white;
+    background-color:orange;
+    padding:5px;
   }
 
   .child{
@@ -1091,8 +1113,28 @@ footer p {
     margin: 10px 0;
     padding-left: 11px;
   }
+  .preview{
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+	  border-radius: 20px;
+	  overflow: hidden;
+    margin:auto;
 
+  }
 
+  .error-alert {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+  }
+  
+  .error-message {
+    font-size: 1.3vw;
+    list-style: circle;
+    color: rgb(182, 48, 0);
+  }
 
 
 
@@ -1157,6 +1199,7 @@ footer p {
 	background:orange;
     /*動き*/
 	transition: all 0.6s;
+  flex-direction:column;
 }
 
 /*アクティブクラスがついたら位置を0に*/
