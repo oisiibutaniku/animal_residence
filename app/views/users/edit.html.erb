@@ -1,4 +1,4 @@
-<div class="contents row log">
+<div class="contents row ">
   <div class="container">
     <h2>プロフィールを編集</h2>
     <%= form_with(model:@user, local: true) do |f| %>
@@ -7,9 +7,7 @@
             プロフィール画像
         <span class="indispensable"></span>
       <div class="click-upload">
-        <p>
           クリックしてファイルをアップロード
-        </p>
         <%= f.file_field :image, id:"select-image" %>
     </div>
             <div class= "preview">
@@ -31,3 +29,4 @@
     <% end %>
   </div>
 </div>
+<%= render partial: "ber/sideber"%>

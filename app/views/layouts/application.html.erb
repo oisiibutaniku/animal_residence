@@ -18,7 +18,7 @@
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">AnimalResidence</a></h1>
         <% if user_signed_in? %>
-          <div class="user_nav grid-6">
+          <div class="user_nav ">
           <%= form_with(url: search_animals_path, local: true, method: :get, class: "search-form") do |form| %>
           <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
           <%= form.submit "検索", class: "search-btn" %>
@@ -33,37 +33,6 @@
        </div>
     </header>
     <%= yield %>
-    <!--サイドバー-->
-  <div class="openbtn" id="opendtn"><span></span>
-                       <span></span>
-                       <span></span>
-  </div>
-<nav id="g-nav">
-  <div class='user-img'>
-  <% if current_user.image.present? %>
-    <%= image_tag current_user.image %>
-    <% else %>
-    <%= image_tag "dummy_user.jpeg" %>
-    <% end %>
-    </div>
-    <div class='user-name'>
-    <%= current_user.nickname %>
-    </a>
-    </div>
-<div class='user-list'>
-<ul>
-<li><%= link_to "マイページ", user_path(current_user.id) %></li> 
-<li><%= link_to "投稿する", new_animal_path %></li> 
-<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
-<li><%= link_to "検索する", search_animals_path %></li> 
-<li><a href="#">Contact</a></li> 
-</ul>
-</div>
-</div>
-</nav>
-<!--自作のJS-->
-<script src="js/5-1-13.js"></script>
-<!--サイドバー-->
         <footer>
       <p>
         Copyright AnimalResidence 2021.

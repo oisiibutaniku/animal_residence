@@ -4,6 +4,7 @@ class AnimalsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]  
   def index
     @animals = Animal.includes(:user).order("created_at DESC")
+    @user = current_user.id
   end
 
   def new

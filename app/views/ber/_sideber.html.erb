@@ -1,0 +1,31 @@
+    <!--サイドバー-->
+  <div class="openbtn" id="opendtn"><span></span>
+                       <span></span>
+                       <span></span>
+  </div>
+<nav id="g-nav">
+  <div class='user-img'>
+  <% if current_user.image.present? %>
+    <%= image_tag current_user.image %>
+    <% else %>
+    <%= image_tag "dummy_user.jpeg" %>
+    <% end %>
+    </div>
+    <div class='user-name'>
+    <%= current_user.nickname %>
+    </a>
+    </div>
+<div class='user-list'>
+<ul>
+<li><%= link_to "マイページ", user_path(current_user.id) %></li> 
+<li><%= link_to "投稿する", new_animal_path %></li> 
+<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
+<li><%= link_to "検索する", search_animals_path %></li> 
+<li><a href="#">Contact</a></li> 
+</ul>
+</div>
+</div>
+</nav>
+<!--自作のJS-->
+<script src="js/5-1-13.js"></script>
+<!--サイドバー-->

@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-font-size
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
  * HTML5 display definitions
@@ -131,7 +130,7 @@ hr {
 /*
  * Address styling not present in IE 8/9. */
 mark {
-  background: yellow;
+  background :sandybrown;
   color: black;
 }
 
@@ -663,7 +662,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #666;
+  color: gray;
   font-size: 25px;
   font-weight: bold
 }
@@ -674,7 +673,7 @@ p {
 }
 
 a:hover {
-  color: white;
+  color: rgb(232, 206, 59);
 }
 
 .bold {
@@ -780,10 +779,9 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 header.header .user_nav {
   position: relative;
-  height: 100px;
   width: 800px;
-  bottom:80px;
-  left: 250px;
+  bottom:40px;
+  left: 100px;
 }
 
 header.header .user_nav span {
@@ -797,7 +795,7 @@ header.header .user_nav span {
 }
 
 header.header .user_nav span:hover ul {
-  color: orange;
+  color: gray;
   display: block;
 }
 
@@ -860,7 +858,7 @@ div.contents.row .new_user {
 
 div.contents.row div.content_post {
   margin: 20px 0;
-  padding: 10px;
+  padding: 30px 20px;
   position: relative;
   color: #fff;
   background-size: cover;
@@ -869,6 +867,7 @@ div.contents.row div.content_post {
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   display: inline-block;
 	min-height: 100%;
+  width: 750px;
   background-color: white;
 }
 
@@ -912,6 +911,7 @@ div.contents.row div.content_post span.name a:hover {
 div.contents.row div.content_post span.name span {
   font-size: 9px;
   display: block;
+
 }
 
 div.contents.row .success {
@@ -947,13 +947,14 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: yellow;
+  background-color:sandybrown;
 }
 
 .container {
   position: relative;
   width: 600px;
   padding: 30px;
+  left: 15%;
 }
 
 .container h3 {
@@ -961,7 +962,7 @@ form input[type="submit"]:hover {
   text-align: center;
   font-weight: normal;
   font-size: 20px;
-  color: #666;
+  color: gray;
 }
 
 .comments {
@@ -970,7 +971,7 @@ form input[type="submit"]:hover {
 }
 
 .comments a {
-  color: orange;
+  color: gray;
 }
 
 .comments a:hover {
@@ -999,6 +1000,9 @@ footer p {
 
 .search-form .search-btn {
   width: 10%;
+}
+.p {
+  white-space: pre-wrap;
 }
 
 /*画像投稿*/
@@ -1081,7 +1085,6 @@ footer p {
   height: 300px;
   width: 300px;
   margin: 10px;
-	border-radius: 20px;
 }
   .userpage-text {
     height: 300px;
@@ -1097,11 +1100,11 @@ footer p {
     font-size: 20px;
   }
   .pro_edit {
-    position: relative;
+    position: absolute;
     width: 260px;
     height:50px;
-    top: 160px;
-    left: 150px; 
+    top: 370px;
+    left: 58%; 
     text-align: center;
     color:white;
     background-color:orange;

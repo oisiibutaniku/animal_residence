@@ -4,7 +4,11 @@ class AnimalsTag
   attr_accessor :image,:tweet, :name,:user_id
 
   with_options presence: true do
+    validates :user_id
+    validates :image  
   end
+  validates :tweet, length: { maximum: 75 } 
+
 
   def save
     animal = Animal.create(tweet: tweet,image: image,user_id: user_id)
