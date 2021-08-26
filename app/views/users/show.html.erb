@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class='pro'>
     <div class='userpage-img'>
-    <% if current_user.image.present? %>
+    <% if   @user.image.present? %>
     <%= image_tag @user.image, class: "item-img"%>
     <% else %>
     <%= image_tag "dummy_user.jpeg", class: "item-img" %>

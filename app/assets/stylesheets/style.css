@@ -779,9 +779,9 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 header.header .user_nav {
   position: relative;
-  width: 800px;
-  bottom:40px;
-  left: 100px;
+  width: 600px;
+  bottom:50px;
+  left: 400px;
 }
 
 header.header .user_nav span {
@@ -1055,12 +1055,13 @@ footer p {
   top: 60px;
   left: 10%;
   display: block;
+  overflow: hidden;
 
 }
 .user-name {
   position: absolute;
   font-size: 30px;
-  top: 380px;
+  top: 350px;
   left: 15%;
   text-transform: uppercase;
 	letter-spacing: 0.1em;
