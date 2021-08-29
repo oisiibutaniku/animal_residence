@@ -1,0 +1,22 @@
+<div class='animal-content'>
+  <div class='user-img-content'>
+    <% if animal.user.image.present? %>
+    <%= image_tag animal.user.image, class: "item-img" %>
+    <% else %>
+    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <% end %>
+  </div>
+  <div class="content_post">
+    <span class="name">
+    <a href="/users/<%= animal.user.id %>">
+    <%= animal.user.nickname %>
+    </a>
+    <p><%= safe_join(animal.tweet.split("\n"),tag(:br)) %></p>
+    <p><% animal.tags.each do |tag| %>
+    <%=link_to tag.name, search_animals_path(keyword: tag.name) %>
+      <%end%>
+    </p>
+    </span>
+    <%= link_to image_tag(animal.image, class: 'animalpic'),animal_path(animal.id) %>
+  </div>
+</div>

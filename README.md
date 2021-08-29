@@ -1,24 +1,55 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[アプリケーション名]
+ANIMAL_RESIDENCE(アニマル レジデンス)
 
-Things you may want to cover:
+[アプリケーション概要]
+動物画像投稿系SNSアプリケーションです
 
-* Ruby version
+[URL]
 
-* System dependencies
+本番環境未設定
 
-* Configuration
+[テスト用アカウント]
 
-* Database creation
+未設定
 
-* Database initialization
+[利用方法]
 
-* How to run the test suite
+ログイン後左上のハンバーガーメニューを開く→投稿する→入力→投稿完了
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+[目指した課題解決]
 
-* ...
+動物をメインコンテンツとしたSNSを開発することにより、
+より動物好きのターゲット層に癒しと可愛さを共感する場を提供
+
+[洗い出した要件]
+
+*ユーザー管理機能
+
+*ツイート投稿機能
+
+*ユーザープロフィール更新機能
+
+*コメント機能
+
+*検索機能
+
+*タグ検索機能
+
+[実装予定の機能]
+*いいね機能の実装
+
+*投稿画像プレビュー機能
+
+*フォロー機能の実装
+
+[データベース設計]
+[![Image from Gyazo](https://i.gyazo.com/e54510087e7e23e587f4f0f50d4f03e3.png)](https://gyazo.com/e54510087e7e23e587f4f0f50d4f03e3)
+
+[ローカルでの動作方法]
+
+*ruby 2.6.5p114
+
+* Rails 6.0.4

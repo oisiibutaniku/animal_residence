@@ -1,0 +1,24 @@
+  <%= form_with model: @animal_tag, url: animals_path, local: true do |form| %>
+  <%= render 'error_messages', model: form.object %>
+
+        AnimalPicture
+        <span class="indispensable">必須</span>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= form.file_field :image, id:"select-image" %>
+    </div>
+        <div class= "preview">
+        <%= image_tag 'pure.png' %>
+        <div id="image-list">
+        </div>
+        </div>
+    テキスト
+      <%= form.text_area :tweet, rows: "5" %>
+    タグ
+      <%= form.text_area :name, rows: "1" %>
+      <div id="search-result">
+    </div>
+      <%= form.submit "投稿" %>
+    <% end %>

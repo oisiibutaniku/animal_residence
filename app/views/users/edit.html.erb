@@ -1,0 +1,33 @@
+<div class="contents row ">
+  <div class="container">
+    <h2>プロフィールを編集</h2>
+    <%= form_with(model:@user, local: true) do |f| %>
+    <%= render 'animals/error_messages', model: f.object %>
+
+            プロフィール画像
+        <span class="indispensable"></span>
+      <div class="click-upload">
+          クリックしてファイルをアップロード
+        <%= f.file_field :image, id:"select-image" %>
+    </div>
+            <div class= "preview">
+            <%= image_tag 'pure.png' %>
+        <div id="image-list">
+        </div>
+        </div>
+            <div class="field">
+        <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
+        <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
+      </div>
+      <div class="field">
+          テキスト
+      <%= f.text_area :profile, rows: "5" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "送信" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render partial: "ber/sideber"%>

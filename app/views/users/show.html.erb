@@ -1,0 +1,30 @@
+<div class="contents row">
+  <div class='pro'>
+    <div class='userpage-img'>
+    <% if   @user.image.present? %>
+    <%= image_tag @user.image, class: "item-img"%>
+    <% else %>
+    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <% end %>
+    </div>
+    <div class='userpage-text'>
+        <div class='userpage-name'>
+        <a><%= @user.nickname %></a>
+        <% if @user.profile.present? %>
+        <div class='userpage-profile'>
+        <p><%= safe_join(@user.profile.split("\n"),tag(:br)) %></p>
+        </div>
+        <% end %>
+        <% if current_user.id == @user.id %>
+        <%= link_to 'プロフィールを編集', edit_user_path(@user.id),class:"pro_edit" %>
+        <% end %>
+  </div>
+    </div>
+</div>
+  <p><%= @user.nickname %>さんの投稿一覧</p>
+  <% @animals.each do |animal| %>
+    <%= render partial: "animals/animal", locals: { animal: animal } %> 
+     <% end %>
+</div>
+<%= render partial: "ber/sideber"%>
+
