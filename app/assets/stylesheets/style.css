@@ -875,6 +875,8 @@ div.contents.row div.content_post {
   position: relative;
   display: cover;
   width: 800px;
+  border-radius: 20px;
+
 }
 
 div.contents.row div.content_post .more {
@@ -1030,8 +1032,7 @@ footer p {
   width: 100px;
   top: 20px;
   right: 10px;
-  margin: 10px;
-	border-radius: 20px;
+  overflow: hidden;
 }
 .animal-content {
   display: flex;
@@ -1048,30 +1049,35 @@ footer p {
 }
 
 /*indexのユーザー情報*/
-.user-img {
-  position: absolute;
-  height: 70%;
-  width: 70%;
-  top: 60px;
-  left: 10%;
+.side{
   display: block;
+  justify-content: space-around;
+}
+
+.user-img {
+  position:absolute;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  left: 15%;
+  top: 7%;
   overflow: hidden;
+
 
 }
 .user-name {
-  position: absolute;
+  position:absolute;
   font-size: 30px;
-  top: 350px;
-  left: 15%;
   text-transform: uppercase;
 	letter-spacing: 0.1em;
 	font-weight: bold;
-  display: block;
+  left: 15%;
+  top: 37%;
 }
 .user-list {
-  position: relative;
-  display: block;
-  top: 350px;
+  position:absolute;
+  left: 50%;
+  top: 40%;
 }
 
 /*showのユーザー情報*/
@@ -1086,6 +1092,8 @@ footer p {
   height: 300px;
   width: 300px;
   margin: 10px;
+  object-fit: cover;
+  overflow: hidden;
 }
   .userpage-text {
     height: 300px;
@@ -1209,6 +1217,7 @@ footer p {
 /*アクティブクラスがついたら位置を0に*/
 #g-nav.panelactive{
     left: 0;
+    overflow-y: scroll; 
 }
 
 

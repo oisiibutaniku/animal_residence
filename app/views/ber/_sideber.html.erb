@@ -4,6 +4,7 @@
                        <span></span>
   </div>
 <nav id="g-nav">
+<div class='side'>
   <div class='user-img'>
   <% if current_user.image.present? %>
     <%= image_tag current_user.image %>
@@ -22,6 +23,7 @@
 <li><%= link_to "検索する", search_animals_path %></li> 
 <li><a href="#">Contact</a></li> 
 </ul>
+</div>
 </div>
 </div>
 </nav>

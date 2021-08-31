@@ -1,10 +1,10 @@
 <div class="contents row">
   <div class='pro'>
     <div class='userpage-img'>
-    <% if   @user.image.present? %>
-    <%= image_tag @user.image, class: "item-img"%>
+    <% if @user.image.present? %>
+    <%= image_tag @user.image%>
     <% else %>
-    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <%= image_tag "dummy_user.jpeg" %>
     <% end %>
     </div>
     <div class='userpage-text'>
