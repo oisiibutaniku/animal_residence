@@ -7,6 +7,10 @@
   <% @animals.each do |animal| %>
    <%= render partial: "animal", locals: { animal: animal } %>
   <% end %>
+  <%= link_to(new_animal_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿</span>
+  <%= image_tag 'dummy_user.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
 </div>
 <%= render partial: "ber/sideber"%>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"

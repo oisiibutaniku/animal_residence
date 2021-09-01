@@ -1,0 +1,6 @@
+<div class="contents row">
+<% @favorite_animals.each do |animal| %>
+   <%= render partial: "animals/animal", locals: { animal: animal } %>
+<% end %>
+</div>
+<%= render partial: "ber/sideber"%>

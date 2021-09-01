@@ -22,7 +22,7 @@
     </div>
 </div>
   <p><%= @user.nickname %>さんの投稿一覧</p>
-  <% @animals.each do |animal| %>
+  <% @animal.each do |animal| %>
     <%= render partial: "animals/animal", locals: { animal: animal } %> 
      <% end %>
 </div>
