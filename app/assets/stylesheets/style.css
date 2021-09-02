@@ -1030,13 +1030,23 @@ footer p {
   font-size: 12px;
   font-weight: bold;
 }
-.user-img-content {
+.user-content {
   position: relative;
-  height: 100px;
-  width: 100px;
   top: 20px;
   right: 10px;
+}
+
+.user-img-content {
+  width: 100px;
+  height: auto;
   overflow: hidden;
+}
+.follow{
+  height: 50px;
+  width: 100px;
+  color: white;
+  margin-top: 5px;
+  background-color: paleturquoise;
 }
 .animal-content {
   display: flex;

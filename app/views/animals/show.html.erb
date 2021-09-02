@@ -13,6 +13,10 @@
       <%= @animal.user.nickname %>
       </a>
     </span>
+    <div class="fav">
+    <%= render "relationships/follow_button", user: @animal.user %>
+    </div>
+
     <p><%= @animal.tweet %></p>
   <%= image_tag @animal.image, class: 'animalpic' %>
     <div class="content_action">
