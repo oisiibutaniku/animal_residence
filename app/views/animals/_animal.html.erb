@@ -7,9 +7,11 @@
     <%= image_tag "dummy_user.png", class: "item-img" %>
     <% end %>
     </div>
+    <% if current_user.id != animal.user.id? %>
       <div class="follow">
-    <%= render "relationships/follow_button", user: animal.user %>
-    </div>
+      <%= render "relationships/follow_button", user: animal.user %>
+      </div>
+    <% end %>
 
   </div>
   <div class="content_post">

@@ -1,0 +1,13 @@
+<div class="contents row">
+  <% @users.each do |user| %>
+  <% @animals = Animal.where(user_id: user.id).limit(1).order("created_at DESC") %>
+  <% @animals.each do |animal| %>
+   <%= render partial: "animal", locals: { animal: animal } %>
+  <% end %>
+  <% end %>
+
+  <%= link_to(new_animal_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿</span>
+  <%= image_tag 'dummy_user.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
+</div>

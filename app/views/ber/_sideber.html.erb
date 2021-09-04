@@ -18,6 +18,7 @@
 <div class='user-list'>
 <ul>
 <li><%= link_to "マイページ", user_path(current_user.id) %></li> 
+<li><%= link_to "フォロー", animal_following_animals_path(current_user.id) %></li> 
 <li><%= link_to "投稿する", new_animal_path %></li> 
 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
 <li><%= link_to "お気に入り", animal_favorites_path(current_user.id) %></li> 

@@ -642,7 +642,9 @@ span {
 body,
 html {
   height: 100%;
-  background-color: #e7e79e;
+  background-image: url("back.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
@@ -1041,12 +1043,10 @@ footer p {
   height: auto;
   overflow: hidden;
 }
-.follow{
+.follow {
   height: 50px;
   width: 100px;
-  color: white;
   margin-top: 5px;
-  background-color: paleturquoise;
 }
 .animal-content {
   display: flex;
@@ -1339,24 +1339,13 @@ footer p {
 
 
 .purchase-btn {
-  width: 120px;
+  width: 150px;
   background: orange;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 10%;
   bottom: 32px;
-  right: 32px;
+  right: 100px;
   position: fixed;
-  padding: 15px;
+  padding: 5px;
 }
 
-.purchase-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  text-decoration: none;
-  margin-bottom: 5px;
-}
-
-.purchase-btn-icon {
-  width: 60%;
-}
