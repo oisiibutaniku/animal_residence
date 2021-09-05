@@ -12,7 +12,6 @@
       <%= render "relationships/follow_button", user: animal.user %>
       </div>
     <% end %>
-
   </div>
   <div class="content_post">
     <div class="fav">
@@ -25,7 +24,7 @@
     </a>
     <p><%= safe_join(animal.tweet.split("\n"),tag(:br)) %></p>
     <p><% animal.tags.each do |tag| %>
-    #<%=link_to tag.name, search_animals_path(keyword: tag.name) %>
+    <%=link_to tag.name, search_animals_path(keyword: tag.name) %>
       <%end%>
     </p>
     </span>

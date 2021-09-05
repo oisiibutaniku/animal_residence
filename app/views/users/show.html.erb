@@ -12,9 +12,15 @@
         <a><%= @user.nickname %></a>
         <% if @user.profile.present? %>
         <div class='userpage-profile'>
-        <p><%= safe_join(@user.profile.split("\n"),tag(:br)) %></p>
+        <td><%= safe_join(@user.profile.split("\n"),tag(:br)) %></td>
         </div>
         <% end %>
+        <% if current_user.id != @user.id? %>
+      <div class="user_follow">
+      <%= render "relationships/follow_button", user: @user %>
+      </div>
+    <% end %>
+
         <% if current_user.id == @user.id %>
         <%= link_to 'プロフィールを編集', edit_user_path(@user.id),class:"pro_edit" %>
         <% end %>

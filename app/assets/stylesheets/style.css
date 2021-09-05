@@ -641,10 +641,7 @@ span {
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 body,
 html {
-  height: 100%;
-  background-image: url("back.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+background-color: rgb(249, 255, 179);
 }
 
 body {
@@ -676,6 +673,7 @@ p {
   font-size: 20px;
   color: gray;
   padding: 20px 0px 20px 0px;
+  overflow-wrap: normal;
 }
 
 a:hover {
@@ -1048,6 +1046,14 @@ footer p {
   width: 100px;
   margin-top: 5px;
 }
+
+.user_follow {
+  position: relative;
+  height: 100px;
+  width: 200px;
+  bottom:140px;
+  left:170px;
+}
 .animal-content {
   display: flex;
   justify-content: space-around;
@@ -1119,8 +1125,11 @@ footer p {
     font-size: 55px;
   }
   .userpage-profile {
+    display: block;
     text-align: left;
     font-size: 20px;
+    width: 300px;
+    overflow-wrap: normal;
   }
 
   .content_action{
@@ -1136,7 +1145,7 @@ footer p {
   .fav {
     position:absolute;
     right: 5%;
-    background-color: rgb(247, 183, 65);
+    background-color: rgb(255, 196, 87);
     border-radius: 50px;
     width:130px;
     height: 35px;
@@ -1338,7 +1347,7 @@ footer p {
 
 
 
-.purchase-btn {
+.animal-btn {
   width: 150px;
   background: orange;
   text-align: center;
