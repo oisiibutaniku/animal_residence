@@ -3,7 +3,7 @@
 <div class='user-content'>
   <div class='user-img-content'>
     <% if @animal.user.image.present? %>
-    <%= image_tag animal.user.image%>
+    <%= image_tag @animal.user.image%>
     <% else %>
     <%= image_tag "dummy_user.png" %>
     <% end %>
