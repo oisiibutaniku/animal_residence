@@ -1,13 +1,23 @@
 <div class="contents row">
 <div class='animal-content'>
+<div class='user-content'>
   <div class='user-img-content'>
     <% if @animal.user.image.present? %>
-    <%= image_tag @animal.user.image, class: "item-img" %>
+    <%= image_tag animal.user.image%>
     <% else %>
-    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <%= image_tag "dummy_user.png" %>
+    <% end %>
+    </div>
+    <% if current_user.id != @animal.user.id? %>
+      <div class="follow">
+      <%= render "relationships/follow_button", user: @animal.user %>
+      </div>
     <% end %>
   </div>
   <div class="content_post">
+      <div class="fav">
+     <%= render partial: "favorites/favorite", locals: { animal: @animal } %>
+  </div>
   <span class="name">
       <a href="/users/<%= @animal.user.id %>">
       <%= @animal.user.nickname %>
@@ -15,6 +25,11 @@
     </span>
     <p><%= @animal.tweet %></p>
   <%= image_tag @animal.image, class: 'animalpic' %>
+    <div class="content_action">
+     <div class="destroy">
+     <%= link_to image_tag("dummy_user.png") ,animal_path(@animal.id), method: :delete %>
+     </div>
+  </div>
   </div>
   </div>
    <div class="container">

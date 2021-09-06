@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = current_user.followings
+  end
+  
   def show
     @user = User.find(params[:id])
-    @animals = @user.animals
+    @animal = @user.animals
+    @favorite_animals = @user.favorite_animals
   end
 
   def edit

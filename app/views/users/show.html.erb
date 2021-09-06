@@ -1,10 +1,10 @@
 <div class="contents row">
   <div class='pro'>
     <div class='userpage-img'>
-    <% if   @user.image.present? %>
-    <%= image_tag @user.image, class: "item-img"%>
+    <% if @user.image.present? %>
+    <%= image_tag @user.image%>
     <% else %>
-    <%= image_tag "dummy_user.jpeg", class: "item-img" %>
+    <%= image_tag "dummy_user.png" %>
     <% end %>
     </div>
     <div class='userpage-text'>
@@ -12,9 +12,15 @@
         <a><%= @user.nickname %></a>
         <% if @user.profile.present? %>
         <div class='userpage-profile'>
-        <p><%= safe_join(@user.profile.split("\n"),tag(:br)) %></p>
+        <td><%= safe_join(@user.profile.split("\n"),tag(:br)) %></td>
         </div>
         <% end %>
+        <% if current_user.id != @user.id? %>
+      <div class="user_follow">
+      <%= render "relationships/follow_button", user: @user %>
+      </div>
+    <% end %>
+
         <% if current_user.id == @user.id %>
         <%= link_to 'プロフィールを編集', edit_user_path(@user.id),class:"pro_edit" %>
         <% end %>
@@ -22,7 +28,7 @@
     </div>
 </div>
   <p><%= @user.nickname %>さんの投稿一覧</p>
-  <% @animals.each do |animal| %>
+  <% @animal.each do |animal| %>
     <%= render partial: "animals/animal", locals: { animal: animal } %> 
      <% end %>
 </div>

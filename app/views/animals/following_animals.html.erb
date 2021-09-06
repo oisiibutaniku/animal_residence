@@ -1,0 +1,18 @@
+<div class="contents row">
+<% if @users.exists? %>
+  <% @users.each do |user| %>
+  <% @animals = Animal.where(user_id: user.id).limit(1).order("created_at DESC") %>
+  <% @animals.each do |animal| %>
+   <%= render partial: "animal", locals: { animal: animal } %>
+  <% end %>
+  <% end %>
+  <% else %>
+  <p>ユーザーはいません</p>
+<% end %>
+</div>
+
+  <%= link_to(new_animal_path, class: 'animal-btn') do %>
+  <%= image_tag 'icon.png' , size: '185x50'%>
+  <% end %>
+</div>
+

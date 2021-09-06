@@ -1,0 +1,9 @@
+      <% if user_signed_in? %>
+    <% if animal.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+  <a><span>❤︎</span><%=link_to animal.favorites.count, animal_favorites_path(animal.id), method: :delete %></a>
+    <% else %>
+  <a><span>♡</span><%=link_to animal.favorites.count, animal_favorites_path(animal.id), method: :post %></a>
+    <% end %>
+  <% else %>
+    <p><span>❤︎</span><%= animal.favorites.count %></p>
+  <% end %>

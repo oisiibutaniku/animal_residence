@@ -1,0 +1,11 @@
+<div class="contents row">
+<% if @favorite_animals.exists? %>
+<% @favorite_animals.each do |animal| %>
+   <%= render partial: "animals/animal", locals: { animal: animal } %>
+<% end %>
+<% else %>
+  <p>お気に入りはありません</p>
+<% end %>
+</div>
+</div>
+<%= render partial: "ber/sideber"%>
