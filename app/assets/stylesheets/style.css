@@ -1130,6 +1130,8 @@ footer p {
     font-size: 20px;
     width: 300px;
     overflow-wrap: normal;
+    margin-top: 5px;
+
   }
 
   .content_action{
