@@ -26,9 +26,12 @@
     <p><%= @animal.tweet %></p>
   <%= image_tag @animal.image, class: 'animalpic' %>
     <div class="content_action">
+            <% if current_user.id == @animal.user.id %>
      <div class="destroy">
      <%= link_to image_tag("dummy_user.png") ,animal_path(@animal.id), method: :delete %>
      </div>
+  <% end %>
+
   </div>
   </div>
   </div>
