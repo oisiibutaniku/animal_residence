@@ -10,27 +10,27 @@
     <div class='userpage-text'>
     <% if current_user.id == @user.id %>
     <% else %>
-          <div class="user_follow">
+      <div class="user_follow">
       <%= render "relationships/follow_button", user: @user %>
       </div>
-      <% end %>
-        <div class='userpage-name'>
-        <a><%= @user.nickname %></a>
-        <% if @user.profile.present? %>
+    <% end %>
+      <div class='userpage-name'>
+      <a><%= @user.nickname %></a>
+      <% if @user.profile.present? %>
         <div class='userpage-profile'>
         <td><%= safe_join(@user.profile.split("\n"),tag(:br)) %></td>
         </div>
-        <% end %>
-        <% if current_user.id == @user.id %>
-        <%= link_to 'プロフィールを編集', edit_user_path(@user.id),class:"pro_edit" %>
-        <% end %>
-  </div>
+      <% end %>
+      <% if current_user.id == @user.id %>
+      <%= link_to 'プロフィールを編集', edit_user_path(@user.id),class:"pro_edit" %>
+      <% end %>
+      </div>
     </div>
-</div>
+  </div>
   <p><%= @user.nickname %>さんの投稿一覧</p>
   <% @animal.each do |animal| %>
-    <%= render partial: "animals/animal", locals: { animal: animal } %> 
-     <% end %>
+  <%= render partial: "animals/animal", locals: { animal: animal } %> 
+  <% end %>
 </div>
 <%= render partial: "ber/sideber"%>
 
